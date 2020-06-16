@@ -129,6 +129,7 @@ public class CursoSpringBootApplication implements CommandLineRunner {
 		
 		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
 		
+		//Continuar na aula 34
 	}
 
 }
