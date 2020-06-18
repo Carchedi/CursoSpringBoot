@@ -47,6 +47,14 @@ public class Pedido implements Serializable {
 	
 	public Pedido () {		
 	}
+		
+	public double getValorTotal() {
+		double total = 0.0;
+		for(ItemPedido ip: itens) {
+			total = total + ip.getSubTotal();
+		}
+		return total;
+	}
 
 	public Pedido(Integer id, Date instante, Cliente cliente, Endereco endreco) {
 		super();
