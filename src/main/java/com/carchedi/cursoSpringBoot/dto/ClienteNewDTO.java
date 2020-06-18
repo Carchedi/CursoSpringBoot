@@ -2,22 +2,44 @@ package com.carchedi.cursoSpringBoot.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import com.carchedi.cursoSpringBoot.services.validation.ClienteInsert;
+
+@ClienteInsert
 public class ClienteNewDTO implements Serializable{
 	  
 	private static final long serialVersionUID = 1L;
 	
+	@NotEmpty(message="Preencimento obrigatório")
+	@Size(min=5, max=120, message="O tamanho precisa estar entre 5 e 120 caracteres")	
 	private String nome;
-	private String email;
-	private String cpfOuCnpj;
-	private Integer tipo;
 	
+	@NotEmpty(message="Preencimento obrigatório")
+	@Email(message="Email inválido")
+	private String email;
+	
+	@NotEmpty(message="Preencimento obrigatório") 
+	private String cpfOuCnpj;
+	
+	private Integer tipo;	
+
+	@NotEmpty(message="Preencimento obrigatório")
 	private String logradouro;
+
+	@NotEmpty(message="Preencimento obrigatório")
 	private String numero;
 	private String complemento;
 	private String bairro;
+
+	@NotEmpty(message="Preencimento obrigatório")
 	private String cep;
 
+	@NotEmpty(message="Preencimento obrigatório")
 	private String telefone1;
+	
 	private String telefone2;
 	private String telefone3;
 	
