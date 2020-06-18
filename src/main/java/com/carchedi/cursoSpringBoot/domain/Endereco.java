@@ -1,6 +1,7 @@
 package com.carchedi.cursoSpringBoot.domain;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,7 +38,7 @@ public class Endereco implements Serializable {
 	public Endereco() {
 	}
 
-	public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep, Cidade cidade, Cliente cliente) {
+	public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep, Cidade cid, Cliente cliente) {
 		super();
 		this.id = id;
 		this.logradouro = logradouro;
@@ -46,7 +47,7 @@ public class Endereco implements Serializable {
 		this.bairro = bairro;
 		this.cep = cep;
 		this.setCliente(cliente);
-		this.cidade = cidade;
+		this.cidade = (cid == null ) ? null : cid;
 	}
 
 	public Integer getId() {
